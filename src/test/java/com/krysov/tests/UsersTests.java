@@ -1,6 +1,6 @@
 package com.krysov.tests;
 
-import com.krysov.helpers.RandomUtils;
+import com.krysov.randomData.RandomUtils;
 import com.krysov.models.users.User;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -15,27 +15,27 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DisplayName("Тестирование функций пользователя")
+@DisplayName("User testing")
 public class UsersTests {
 
-    @DisplayName("Добавление нового пользователя")
+    @DisplayName("Create a new user")
     @Test
     void createUserTest() {
         User userProfile = createNewUser();
         Response newUserInStore = addNewUserToStore(userProfile);
 
-        step("Сервер должен прислать в ответе Id созданного пользователя", () -> {
+        step("Checking id for create user", () -> {
             assert newUserInStore.path("message").equals(userProfile.getId().toString());
         });
     }
 
-    @DisplayName("Получение информации о пользователе по username")
+    @DisplayName("Get information for new user")
     @Test
     void getUserByIdTest() {
         User userProfile = createNewUser();
         addNewUserToStore(userProfile);
 
-        step("Отправляем GET запрос", () -> {
+        step("send a get request", () -> {
             User user = given()
                     .spec(userRequestSpec)
                 .when()
@@ -51,13 +51,13 @@ public class UsersTests {
         });
     }
 
-    @DisplayName("Изменение информации о пользователе")
+    @DisplayName("Change user data")
     @Test
     void updateUserInfoTest() {
         User userProfile = createNewUser();
         addNewUserToStore(userProfile);
 
-        step("Отправляем PUT запрос на изменение данных", () -> {
+        step("send a put request", () -> {
             userProfile.setFirstName(RandomUtils.getFirstname());
             userProfile.setEmail(RandomUtils.getEmail());
 
@@ -70,7 +70,7 @@ public class UsersTests {
                     .spec(userResponseSpec)
                     .statusCode(200);
 
-            step("Проверяем информацию о юзере", () -> {
+            step("Check user data", () -> {
                 User user = given()
                         .spec(userRequestSpec)
                     .when()

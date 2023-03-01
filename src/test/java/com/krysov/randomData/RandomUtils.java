@@ -1,4 +1,4 @@
-package com.krysov.helpers;
+package com.krysov.randomData;
 
 import com.github.javafaker.Faker;
 
@@ -29,12 +29,12 @@ public class RandomUtils {
     }
 
     public static List<String> getPhotoUrls () {
-        List<String> petPhotoUrls = new ArrayList<>();
+        List<String> PhotoUrls = new ArrayList<>();
 
         for (int i=0; i<2; i++) {
-            petPhotoUrls.add(faker.internet().url());
+            PhotoUrls.add(faker.internet().url());
         }
 
-        return petPhotoUrls;
+        return PhotoUrls;
     }
 }

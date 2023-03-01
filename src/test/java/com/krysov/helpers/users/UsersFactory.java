@@ -4,7 +4,7 @@ import com.krysov.models.users.User;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
-import static com.krysov.helpers.RandomUtils.*;
+import static com.krysov.randomData.RandomUtils.*;
 import static com.krysov.specs.users.UsersRequest.userRequestSpec;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;

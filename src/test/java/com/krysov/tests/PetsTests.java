@@ -1,6 +1,6 @@
 package com.krysov.tests;
 
-import com.krysov.helpers.RandomUtils;
+import com.krysov.randomData.RandomUtils;
 import com.krysov.models.pets.Pet;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -15,22 +15,22 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DisplayName("Тестирование раздела питомцев")
+@DisplayName("Pet testing")
 public class PetsTests {
 
-    @DisplayName("Добавление нового питомца в магазин")
+    @DisplayName("Add a new pet to store")
     @Test
     void createPetTest() {
         Pet petProfile = createNewPet();
         Pet newPet = addNewPetToStore(petProfile);
 
-        step("Проверяем, что полученные данные соответсвуют отправленным", () -> {
+        step("Checking sent data", () -> {
             assertThat(newPet.getName()).isEqualTo(petProfile.getName());
             assertThat(newPet.getId()).isEqualTo(petProfile.getId());
         });
     }
 
-    @DisplayName("Получение информации о питомце по ID")
+    @DisplayName("Pet data check")
     @Test
     void getPetByIdTest() {
         Pet petProfile = createNewPet();
@@ -46,20 +46,20 @@ public class PetsTests {
                 .body(matchesJsonSchemaInClasspath("schemas/pets/getPetSchema.json"))
                 .extract().as(Pet.class);
 
-        step("Проверяем, что данные питомца соответствует заданным", () -> {
+        step("Checking sent data", () -> {
             assertThat(getPetById.getId()).isEqualTo(petProfile.getId());
             assertThat(getPetById.getName()).isEqualTo(petProfile.getName());
             assertThat(getPetById.getPhotoUrls()).isEqualTo(petProfile.getPhotoUrls());
         });
     }
 
-    @DisplayName("Обновление информации о питомце")
+    @DisplayName("Pet data update")
     @Test
     void updatePetInformationTest() {
         Pet petProfile = createNewPet();
         addNewPetToStore(petProfile);
 
-        step("Меняем данные питомца", () -> {
+        step("Change pet data", () -> {
             petProfile.setName("New_Pet_Name");
             petProfile.setPhotoUrls(RandomUtils.getPhotoUrls());
             Pet updatedPetProfile = given()
@@ -73,7 +73,7 @@ public class PetsTests {
                     .statusCode(200)
                     .extract().as(Pet.class);
 
-            step("Проверяем, что данные питомца изменились", () -> {
+            step("Check for changes in pet data", () -> {
                 assertThat(updatedPetProfile.getName()).isEqualTo(petProfile.getName());
                 assertThat(updatedPetProfile.getPhotoUrls()).isEqualTo(petProfile.getPhotoUrls());
             });
@@ -81,13 +81,13 @@ public class PetsTests {
 
     }
 
-    @DisplayName("Удаление информации о питомце по ID")
+    @DisplayName("Pet data delete")
     @Test
     void delPetByIdTest() {
         Pet petProfile = createNewPet();
         Pet newPetInStore = addNewPetToStore(petProfile);
 
-        step("Удаляем информацию о созданном питомце", () -> {
+        step("Deleting a created pet", () -> {
             Response response = given()
                     .spec(petsRequestSpec)
                     .when()
@@ -98,7 +98,7 @@ public class PetsTests {
                     .statusCode(200)
                     .extract().response();
 
-            step("Сервер должен прислать в ответе Id удаленного питомца", () -> {
+            step("Checking id for remote pet", () -> {
                 assert response.path("message").equals(newPetInStore.getId().toString());
             });
         });
