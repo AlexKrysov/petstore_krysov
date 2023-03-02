@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class UsersFactory {
-    @Step("Создаем нового пользователя")
+    @Step("Create a new user")
     public static User createNewUser() {
         return User
                 .builder()
@@ -25,7 +25,7 @@ public class UsersFactory {
                 .build();
     }
 
-    @Step("Добавляем нового пользователя в магазин")
+    @Step("Add a new user to store")
     public static Response addNewUserToStore(User newUser) {
         return given()
                 .spec(userRequestSpec)
