@@ -4,6 +4,7 @@ import com.krysov.randomData.RandomUtils;
 import com.krysov.models.users.User;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.krysov.helpers.users.UsersFactory.addNewUserToStore;
@@ -19,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UsersTests {
 
     @DisplayName("Create a new user")
+    @Tag("user")
     @Test
     void createUserTest() {
         User userProfile = createNewUser();
@@ -30,6 +32,7 @@ public class UsersTests {
     }
 
     @DisplayName("Get information for new user")
+    @Tag("user")
     @Test
     void getUserByIdTest() {
         User userProfile = createNewUser();
@@ -52,6 +55,7 @@ public class UsersTests {
     }
 
     @DisplayName("Change user data")
+    @Tag("user")
     @Test
     void updateUserInfoTest() {
         User userProfile = createNewUser();

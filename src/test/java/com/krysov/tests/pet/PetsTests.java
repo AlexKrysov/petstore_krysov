@@ -34,6 +34,7 @@ public class PetsTests {
     }
 
     @DisplayName("Pet data check")
+    @Tag("pet")
     @Test
     void getPetByIdTest() {
         Pet petProfile = createNewPet();
@@ -57,6 +58,7 @@ public class PetsTests {
     }
 
     @DisplayName("Pet data update")
+    @Tag("pet")
     @Test
     void updatePetInformationTest() {
         Pet petProfile = createNewPet();
@@ -85,6 +87,7 @@ public class PetsTests {
     }
 
     @DisplayName("Pet data delete")
+    @Tag("pet")
     @Test
     void delPetByIdTest() {
         Pet petProfile = createNewPet();
