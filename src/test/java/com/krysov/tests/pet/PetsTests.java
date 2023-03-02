@@ -18,10 +18,10 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Pet testing")
-@Tag("api_pet_tests")
 public class PetsTests {
 
     @DisplayName("Add a new pet to store")
+    @Tag("api_pet_tests")
     @Test
     void createPetTest() {
         Pet petProfile = createNewPet();
