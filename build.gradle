@@ -70,3 +70,9 @@ task api_pet(type: Test) {
         includeTags 'pet'
     }
 }
+
+task api_user(type: Test) {
+    useJUnitPlatform {
+        includeTags 'user'
+    }
+}
