@@ -1,4 +1,4 @@
-package com.krysov.tests;
+package com.krysov.tests.user;
 
 import com.krysov.randomData.RandomUtils;
 import com.krysov.models.users.User;

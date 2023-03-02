@@ -1,9 +1,11 @@
-package com.krysov.tests;
+package com.krysov.tests.pet;
 
 import com.krysov.randomData.RandomUtils;
 import com.krysov.models.pets.Pet;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static com.krysov.helpers.pets.PetsFactory.addNewPetToStore;
@@ -16,6 +18,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Pet testing")
+@Tags({@Tag("api"), @Tag("pet")})
 public class PetsTests {
 
     @DisplayName("Add a new pet to store")
