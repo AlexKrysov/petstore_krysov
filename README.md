@@ -1,8 +1,8 @@
 ## Проект по автоматизации API на тестовой платформе [Swagger Petstore](https://petstore.swagger.io/#/)
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:heavy_check_mark: [Тесты для раздела Pets](https://github.com/alekseilisenkov/petstore-api-project/tree/main/src/test/java/com/alexlis/test/pet)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:heavy_check_mark: [Тесты для раздела Pets](https://github.com/AlexKrysov/petstore_krysov/tree/main/src/test/java/com/krysov/tests/pet)
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:heavy_check_mark: [Тесты для раздела Store](https://github.com/alekseilisenkov/petstore-api-project/tree/main/src/test/java/com/alexlis/test/store)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:heavy_check_mark: [Тесты для раздела Store](https://github.com/AlexKrysov/petstore_krysov/tree/main/src/test/java/com/krysov/tests/user)
 
 ## :rocket: Технологии и инструменты:
 
@@ -20,7 +20,6 @@
 
 ## Покрыт следующий функционал:
 * API тесты:
-    * ✅ Создание экземпляра питомца по заданным параметрам
     * ✅ Создание экземпляра питомца с рандомными параметрами
     * ✅ Обновление питомца
     * ✅ Удаление созданного питомца
@@ -29,19 +28,15 @@
 
 
 ## Как запустить:
-### Локально без параметров запуск всех тестов
+### Локально запуск всех тестов
 ```bash
 gradle clean test
 ```
 
-### Локально с параметрами запуск всех тестов
-```bash
-gradle clean -Dthreads=1 test
-```
 
 ### Запуск тестов в разделе store
 ```bash
-gradle clean api_store
+gradle clean api_user
 ```
 
 ### Запуск тестов в разделе pet
@@ -52,43 +47,53 @@ gradle clean api_pet
 ## Запуск в Jenkins:
 OVERVIEW
 <br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_1 Allure.png" border="0"></a>
+<a href="https://ibb.co/TvwPjzj"><img src="images/overview.png" border="0"></a>
 
 SUITES
 <br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_1 Allure.png" alt="" border="0"></a>
+<a href="https://ibb.co/TvwPjzj"><img src="images/suites.png" alt="" border="0"></a>
 
 BEHAVIORS
 <br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_3 Allure.png" alt="" border="0"></a>
+<a href="https://ibb.co/TvwPjzj"><img src="images/Behaviors.png" alt="" border="0"></a>
 
 STATUS
 <br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_4 Allure.png" alt="" border="0"></a>
+<a href="https://ibb.co/TvwPjzj"><img src="images/Status.png" alt="" border="0"></a>
 
-START PARAMETERS
-<br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/Allure.png" alt="" border="0"></a>
 
-## Интеграция с JIRA:
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_5 Allure.png" alt="" border="0"></a>
+
+[//]: # (## Интеграция с JIRA:)
+
+[//]: # (<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_5 Allure.png" alt="" border="0"></a>)
 
 ## Интеграция с TELEGRAM:
-<a href="https://ibb.co/TvwPjzj"><img src="images/Screenshot_6 Telegram.png" alt="" border="0"></a>
+<a href="https://ibb.co/TvwPjzj"><img src="images/bot.png" alt="" border="0"></a>
 
-## Интеграция с Allure TestOPS:
-CUSTOM DASHBOARD
-<br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/1 allure testops.png" alt="" border="0"></a>
+[//]: # (## Интеграция с Allure TestOPS:)
 
-LAUNCHES
-<br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/2 allure testops.png" alt="" border="0"></a>
+[//]: # (CUSTOM DASHBOARD)
 
-DEFAULT DASHBOARD
-<br >
-<a href="https://ibb.co/TvwPjzj"><img src="images/3 allure testops.png" alt="" border="0"></a>
+[//]: # (<br >)
 
-SUITES
-<br >
+[//]: # (<a href="https://ibb.co/TvwPjzj"><img src="images/1 allure testops.png" alt="" border="0"></a>)
+
+[//]: # ()
+[//]: # (LAUNCHES)
+
+[//]: # (<br >)
+
+[//]: # (<a href="https://ibb.co/TvwPjzj"><img src="images/2 allure testops.png" alt="" border="0"></a>)
+
+[//]: # ()
+[//]: # (DEFAULT DASHBOARD)
+
+[//]: # (<br >)
+
+[//]: # (<a href="https://ibb.co/TvwPjzj"><img src="images/3 allure testops.png" alt="" border="0"></a>)
+
+[//]: # ()
+[//]: # (SUITES)
+
+[//]: # (<br >)
 <a href="https://ibb.co/TvwPjzj"><img src="images/4 allure testops.png" alt="" border="0"></a>
